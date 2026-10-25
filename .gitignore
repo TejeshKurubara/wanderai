@@ -1,0 +1,12 @@
+# Environments & Keys
+.env
+.env.local
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Node dependencies & builds
+node_modules/
+dist/
+build/
