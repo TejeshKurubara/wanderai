@@ -25,6 +25,13 @@ def create_app() -> Flask:
         logger.warning(warning)
 
     app = Flask(__name__)
+    CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=True,
+    allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    )
     app.config["MAX_CONTENT_LENGTH"] = Config.MAX_CONTENT_LENGTH
     app.url_map.strict_slashes = False
 
